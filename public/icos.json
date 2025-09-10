@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "type": "IP",
+    "value": "192.168.1.100",
+    "description": "Suspicious login attempt from internal IP",
+    "severity": "Medium",
+    "source": "Firewall Logs",
+    "dateDetected": "2025-09-01"
+  },
+  {
+    "id": 2,
+    "type": "Domain",
+    "value": "malicious-example.com",
+    "description": "Known phishing domain targeting finance users",
+    "severity": "High",
+    "source": "Threat Intel Feed",
+    "dateDetected": "2025-09-03"
+  },
+  {
+    "id": 3,
+    "type": "Hash",
+    "value": "9e107d9d372bb6826bd81d3542a419d6",
+    "description": "Malware file hash detected in endpoint scan",
+    "severity": "Critical",
+    "source": "EDR System",
+    "dateDetected": "2025-09-05"
+  },
+  {
+    "id": 4,
+    "type": "URL",
+    "value": "http://bad-site.org/login",
+    "description": "C2 server communication attempt",
+    "severity": "High",
+    "source": "Proxy Logs",
+    "dateDetected": "2025-09-08"
+  },
+  {
+    "id": 5,
+    "type": "Email",
+    "value": "attacker@evilmail.com",
+    "description": "Phishing email sender",
+    "severity": "Medium",
+    "source": "Email Gateway",
+    "dateDetected": "2025-09-09"
+  }
+]
