@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Threat Intelligence UI Dashboard
 
-## Getting Started
+An interactive frontend dashboard built with **Next.js, React, TypeScript, and TailwindCSS** to visualize threat intelligence feeds (mocked APIs/JSON).  
+The application fetches, stores, and displays Indicators of Compromise (IOCs) in a clean, responsive UI.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Data Fetching**
+  - Fetch IOCs from `/iocs.json` (mock data) or API.
+  - Refresh button to manually reload data.
+  - Configurable periodic fetch (e.g., every X minutes).
+  - Loading state while fetching.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **State Management**
+  - IOC data stored in React state.
+  - Optional integration with Zustand for global state.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Dashboard**
+  - Table or card view of IOCs:
+    - `value`, `type`, `source`, `timestamp`.
+  - Search and filter by:
+    - IOC type: `ip`, `subnet`, `url`
+    - Source: `blocklist.de`, `spamhaus`, `digitalside`
+  - Sorting (latest first, alphabetical).
+  - Pagination / infinite scroll (bonus).
+  - Summary widgets with total counts (IPs, Subnets, URLs).
 
-## Learn More
+- **UI/UX**
+  - TailwindCSS styling for a **modern SaaS look**.
+  - Responsive design (desktop + mobile).
+  - Dark mode toggle (bonus).
+  - Smooth transitions with Framer Motion (bonus).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+threat-dashboard/
+├── public/
+│ └── iocs.json # Mock data feeds
+├── src/
+│ ├── components/ # Reusable UI components
+│ ├── pages/ or app/ # Next.js routing
+│ ├── store/ # Zustand/Redux store (if used)
+│ ├── types/ # TypeScript interfaces
+│ └── utils/ # Helper functions (fetch, format, etc.)
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── README.md
